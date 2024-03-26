@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" /> <title>吱又吱</title>
+    <style type="text/css">
+    body {
+        background-color: #f6f6f6;
+    }
+
+    div {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .container {
+        /*background-color: #bbb;
+				margin: 5px;
+				background-color: red;
+				border: 5px solid green;
+				padding: 0px;
+    			*/
+        padding-left: 6px;
+        padding-right: 6px;
+        margin: 0 auto;
+    }
+
+    .row {
+        width: 100%;
+        max-width: 1500px;
+        min-width: 755px;
+        padding: 6px;
+        overflow: hidden;
+    }
+
+    .col {
+        margin-right: 3%;
+        float: left;
+    }
+
+    .logo {
+        color: #64854c;
+        height: 80px;
+        text-align: left;
+        display: block;
+        margin-left: 40px;
+    }
+
+    .music {
+        float: right;
+        transform: translateY(25px);
+    }
+
+    .scroll {
+        height: 20px;
+        background-color: #96b97d;
+    }
+
+    .main {
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    .left-aside {
+        background-color: #ffe4e1;
+        width: 18%;
+        height: 4600px;
+    }
+
+    .mid-content {
+        background-color: #fff;
+        width: 74%;
+        height: 4600px;
+    }
+
+    .list {
+        height: 100%;
+    }
+
+    .article {
+        padding: 0 10px;
+        height: 100%;
+    }
+
+    .bottom {
+        height: 100px;
+        background-color: #96b97d;
+    }
+
+    .pic {
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    .text-pic {
+        margin-bottom: 25px;
+        cursor: pointer;
+    }
+
+    .subtitle {
+        text-align: center;
+        box-shadow: 0px 5px 6px #bbb;
+    }
+
+    #nynbox {
+        height: 280px;
+        width: 180px;
+    }
+
+    #nyn {
+        height: 270px;
+        width: 170px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+        float: left;
+    }
+
+    #stbox {
+        height: 280px;
+        width: 460px;
+    }
+
+    #st {
+        height: 270px;
+        width: 450px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+        float: left;
+    }
+
+    #yjbox {
+        height: 280px;
+        width: 280px;
+    }
+
+    #yj {
+        height: 270px;
+        width: 270px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+        float: left;
+    }
+
+    #roll-long {
+        width: 30%;
+        height: auto;
+    }
+
+    #rain-long {
+        width: 50%;
+        height: auto;
+    }
+
+    table {
+        margin: 0 auto;
+        font-size: 24px;
+    }
+
+    th {
+        color: #FFF;
+        background-color: #555;
+        border: 1px solid #FFF;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    td {
+        line-height: 2em;
+        min-width: 24px;
+        border: 1px solid #D4D4D4;
+        padding: 5px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        vertical-align: top;
+    }
+
+    ul,
+    ol {
+        margin: 5px auto;
+        font-family: 'Consolas';
+    }
+
+    li {
+        margin-bottom: 14px;
+    }
+
+    #idiom {
+        font-size: 28px;
+    }
+
+    #idiom-meaning {
+        font-size: 25px;
+    }
+
+    #sentences {
+        font-size: 24px;
+    }
+
+    .single-btn {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-info {
+        margin-right: 25px;
+        font-size: 24px;
+    }
+
+    .fill-grid {
+        height: 26px;
+        width: 60px;
+    }
+
+    .info {
+        font-size: 24px;
+    }
+
+    textarea {
+        height: 200px;
+        width: 450px;
+        font-size: 24px;
+        resize: none;
+    }
+
+    fieldset {
+        border: 5px solid #D8BFD8;
+    }
+
+    .submit-btn {
+        height: 100px;
+        text-align: center;
+    }
+
+    .fake-sub {
+        width: 160px;
+        height: 70px;
+        border-radius: 10px;
+        background-color: #96b97d;
+        font-size: 24px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0px 8px #999;
+    }
+
+    .fake-sub:hover {
+        background-color: #ff99cc;
+    }
+
+    .fake-sub:active {
+        background-color: #ff99cc;
+        box-shadow: 0 5px #666;
+        transform: translateY(5px);
+    }
+
+    .fake-sub span {
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .fake-sub span:after {
+        content: '~';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .fake-sub:hover span {
+        padding-right: 25px;
+    }
+
+    .fake-sub:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    #nar {
+        padding-left: 30px;
+        padding-right: 30px;
+        float: none;
+        width: 190px;
+        height: 2300px;
+        text-align: left;
+        color: #aaa;
+        font-family: "黑体";
+        font-size: 28px;
+        border: 0px;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    </style>
+    <script type="text/javascript">
+    function myPrompt() {
+        alert("吱吱！");
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col logo">
+                <h1>耗子之家</h1>
+            </div>
+            <div class="col music">
+                <audio src="./msc/pure_imagination.mp3" controls="controls" preload="auto" loop="loop">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="container scroll">
+        <div class="row"></div>
+    </div>
+    <div class="container main">
+        <div class="row">
+            <div class="col left-aside">
+                <div class="list">
+                    <div class="pic">
+                        <img src="./img/jump_long.gif" alt="jump long" id="jump-long"></img>
+                    </div>
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <div class="pic">
+                        <img src="./img/tail_long.gif" alt="tail long" id="tail-long"></img>
+                    </div>
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <div class="pic">
+                        <img src="./img/roll_long.gif" alt="roll long" id="roll-long"></img>
+                    </div>
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <div class="pic">
+                        <img src="./img/rain_long.gif" alt="rain long" id="rain-long"></img>
+                    </div>
+                    <br /><br /><br /><br /><br /><br /><br />
+                    <hr />
+                    <div class="row">
+                        <textarea id="nar"> 我的小鹦鹉蹦跶到案边来，递给我一个纸折的月亮，我很是喜欢，我轻抚它的额头并回敬了几粒葵花籽。我管小鹦鹉叫剂子，因为它像面团一样可爱。我用手指将纸月按在窗户的玻璃上，并让其与天边的那个明月相重合。月光透过玻璃与折纸向我送来几分凉意，我很喜欢这种清凉，就像含着冰激凌一般。此刻，我想知道用月亮做的冰激凌尝起来是怎样的。望着窗外，渐渐的，眼前的窗户变成了舷窗，等我缓过神来，才发现窗外的一切都淹没在清澈的凉水里。孤高的月亮在天上挂着，欣赏着水面倒影中的自己。我所在的船儿没有舵没有桨，只是浸渍在凉水里，不沉也不浮。船内只有我和剂子。水面还在上涨，似乎想要涨到月亮上去。月亮不以为意，不管涨上来的是牛奶还是岩浆，都不能阻止它欣赏自己的身影。在这片汪洋凉水中，鲨鱼和蓝鲸会觉寒吗？
+							</textarea>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            <div class="col mid-content">
+                <div class="article">
+                    <h2><span style="color:#96b97d">耗子</span>一箩筐</h2>
+                    <div class="row">
+                        <div class="text-pic col" id="nynbox">
+                            <img src="./img/nyn.png" alt="nyn" id="nyn"></img>
+                            <div class="subtitle">
+                                <p>人见人爱NYN姐贵</p>
+                            </div>
+                        </div>
+                        <div class="text-pic col" id="stbox">
+                            <img src="./img/st.jpg" alt="st" id="st"></img>
+                            <div class="subtitle">
+                                <p>好吃的水豚兄贵</p>
+                            </div>
+                        </div>
+                        <div class="text-pic col" id="yjbox">
+                            <img src="./img/_810.jpg" alt="yj" id="yj"></img>
+                            <div class="subtitle">
+                                <p>在健身的鼠先辈</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <h2><span style="color:#96b97d">吱吱</span>小闲话</h2>
+                    <div class="row">
+                        <table id="words_table">
+                            <tbody>
+                                <tr>
+                                    <th align="left">耗子话</th>
+                                    <th align="left">意义</th>
+                                </tr>
+                                <tr>
+                                    <td>这个也太内个了吧</td>
+                                    <td>耗子觉得很内个</td>
+                                </tr>
+                                <tr>
+                                    <td>qtui</td>
+                                    <td>耗子很确实</td>
+                                </tr>
+                                <tr>
+                                    <td>睡小觉时间到！</td>
+                                    <td>耗子呼噜噜</td>
+                                </tr>
+                                <tr>
+                                    <td>谢谢你</td>
+                                    <td>耗子怀着感恩的心</td>
+                                </tr>
+                                <tr>
+                                    <td>，，，</td>
+                                    <td>耗子，，，</td>
+                                </tr>
+                                <tr>
+                                    <td>把我逮住了</td>
+                                    <td>耗子给逮住了</td>
+                                </tr>
+                                <tr>
+                                    <td>生吞与活剥</td>
+                                    <td>耗子被生吞与活剥</td>
+                                </tr>
+                                <tr>
+                                    <td>哈哈，我要米了！</td>
+                                    <td>耗子要米啦！</td>
+                                </tr>
+                                <tr>
+                                    <td>随便吃吃</td>
+                                    <td>耗子吃两吃</td>
+                                </tr>
+                                <tr>
+                                    <td>挖吃</td>
+                                    <td>耗子看看p(指python)</td>
+                                </tr>
+                                <tr>
+                                    <td>恋鼠坐大牢</td>
+                                    <td>耗子坐大牢</td>
+                                </tr>
+                                <tr>
+                                    <td>谁也不知道，你也不知道</td>
+                                    <td>耗子也不知道</td>
+                                </tr>
+                                <tr>
+                                    <td>你来啦</td>
+                                    <td>耗子来啦</td>
+                                </tr>
+                                <tr>
+                                    <td>是我，等死吧我</td>
+                                    <td>耗子是耗子</td>
+                                </tr>
+                                <tr>
+                                    <td>这个就厉害咯</td>
+                                    <td>耗子厉害得要死</td>
+                                </tr>
+                                <tr>
+                                    <td>把游戏狂打，把觉狂睡</td>
+                                    <td>耗子把字句</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <h2><span style="color:#96b97d">乐此语</span> L^eci Liq</h2>
+                    <p>乐此语是一门耗子专用语言，其拼读合一，语法灵活，深受耗子们喜爱！下面就通过一些乐此语中的常用语，来感受一下乐此语的魅力吧！</p>
+                    <h3><span style="color:#96b97d">常用语</span></h3>
+                    <div class="row">
+                        <div class="col">
+                            <ul id="idiom" type="disc">
+                                <li>=i b^ejo !</li>
+                                <li>Woz =i b^ejo !</li>
+                                <li>=a b^ejo vel .</li>
+                                <li>Woz =i fai wou ?</li>
+                                <li>Beri~=ymik dro zhyt =i !</li>
+                                <li>
+                                    <ul type="circle">
+                                        <li>=a renf =i .</li>
+                                        <li>Monda .</li>
+                                    </ul>
+                                </li>
+                                <li>B^eik~maodin !</li>
+                                <li>B^eik~dimdin !</li>
+                                <li>B^eik~nizdin !</li>
+                                <li>Siak .</li>
+                                <li>Somi . </li>
+                                <li>Len zhyt .</li>
+                                <li>=i chia lio my?</li>
+                                <li>Curdin nof dinz^r fai <br />beri~noik,veh fai my?</li>
+                                <li>Loq lio .</li>
+                                <li>Lih !</li>
+                                <li>M^e_ke my?</li>
+                                <li>M^e_ke .</li>
+                                <li>Eli cait ak!</li>
+                                <li>Ou je^e!</li>
+                                <li>Noik !</li>
+                                <li>Ha-ha! </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul id="idiom-meaning" type="disc">
+                                <li>你好！</li>
+                                <li>您好！</li>
+                                <li>我也很好。</li>
+                                <li>您是哪位？</li>
+                                <li>很高兴见到你！</li>
+                                <li>我爱你。<br /><br /></li>
+                                <li>早上好！</li>
+                                <li>中午好！</li>
+                                <li>晚上好！</li>
+                                <li>谢谢。</li>
+                                <li>抱歉。</li>
+                                <li>再见。</li>
+                                <li>你吃了吗？</li>
+                                <li>今天天气真不错，不是吗？<br /><br /></li>
+                                <li>醒了。</li>
+                                <li>厉害！</li>
+                                <li>好吗？</li>
+                                <li>行。</li>
+                                <li>原来如此！</li>
+                                <li>欧耶！</li>
+                                <li>好耶！</li>
+                                <li>哈哈！</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>乐此语有着独特的缩写系统，其通过运用ASCII字符来简化书写形式！下面就通过一些句子来感受一下吧！</p>
+                    <div class="row">
+                        <ol id="sentences" type="a">
+                            <li>
+                                <ul type="circle">
+                                    <li><b>=u<-fe^e@g [pwa@gp gesh] vor=u+mam zhev@g=u+ch=em gandin .</b> </li> <li>=u baik fe^e gca dro pwa gca pro gesh vor =u nof mam zhev gca =u nof ch=em gandin .</li>
+                                    <li>昨天，当他妈妈来到他的房间时，他被发现正在打游戏。</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul type="circle">
+                                    <li><b>Gi^e-eswet vor s^rd doul@p truik~eswet .</b></li>
+                                    <li>Gi^e-eswet vor s^rd doul pro truik~eswet .</li>
+                                    <li>世间万物各司其职。</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul type="circle">
+                                    <li><b>:Shigure: chia@g choz&lt;tlag@g in :kotatsu:&gt;, lokev@g choz-pili aq ansk aft =u chia@l ly .</b></li>
+                                    <li>:Shigure: chia gca choz mro tlag gca in :kotatsu:, lokev gca choz-pili aq ansk aft =u chia lio ly .</li>
+                                    <li>Shigure躺在被炉里吃橘子，吃完橘子后把橘子皮放在桌子上。</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul type="circle">
+                                    <li><b>=i itl zig noik~giam. =i+jasis*in f=en-zyn,=i+jabro pwa smon-gesh&&chro kad, =i+bab kaq~sai eqz, =i+mam*esnik~mipre’h && =i k=ef bin-cirhn. =ims dax itl glik~fuc !</b></li>
+                                    <li>=i itl zig noik~giam. =i nof jasis fai in f=en-zyn, =i nof jabro pwa smon-gesh enh chro kad, =i nof bab kaq~sai eqz, =i nof mam fai esnik~mipre-hor, enh =i k=ef bin-cirhn. =ims dax itl glik~fuc !</li>
+                                    <li>你有一个美好的家庭。你妹妹混饭圈，你弟弟玩手游抽卡，你爸爸狂讲政治，你妈妈是个老迷信，而你喜欢二次元。你们都有光明的未来！</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <hr />
+                    <h2><span style="color:#96b97d">乐此语</span>小考堂</h2>
+                    <p>随便写一写。</p>
+                    <div class="row">
+                        <form>
+                            <ol id="test" type="1">
+                                <li>
+                                    <fieldset>
+                                        <legend>以下哪个不是形容词？</legend>
+                                        <input type="radio" name="1st" class="single-btn" value="a" />
+                                        <span class="btn-info">noik</span>
+                                        <input type="radio" name="1st" class="single-btn" value="b" />
+                                        <span class="btn-info">mep</span>
+                                        <input type="radio" name="1st" class="single-btn" value="c" />
+                                        <span class="btn-info">lilik</span>
+                                        <input type="radio" name="1st" class="single-btn" value="d" />
+                                        <span class="btn-info">moki</span>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset>
+                                        <legend>以下哪个词的意思是“生命”？</legend>
+                                        <input type="radio" name="2rd" class="single-btn" value="a" />
+                                        <span class="btn-info">sbun</span>
+                                        <input type="radio" name="2rd" class="single-btn" value="b" />
+                                        <span class="btn-info">luka</span>
+                                        <input type="radio" name="2rd" class="single-btn" value="c" />
+                                        <span class="btn-info">kapos</span>
+                                        <input type="radio" name="2rd" class="single-btn" value="d" />
+                                        <span class="btn-info">l^eci</span>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset>
+                                        <legend>填空：为什么我听不到声音？</legend>
+                                        <div class="info">
+                                            Wei =a
+                                            <input type="text" class="fill-grid">k^e
+                                            tirhn
+                                            <input type="text" class="fill-grid">
+                                            ？
+                                        </div>
+                                    </fieldset>
+                                </li>
+                                <li>
+                                    <fieldset>
+                                        <legend>填空：你又在玩游戏！</legend>
+                                        <div class="info">
+                                            =i
+                                            <input type="text" class="fill-grid">
+                                            pwa<input type="text" class="fill-grid">
+                                            gesh !
+                                        </div>
+                                    </fieldset>
+                                </li>
+                                <li>翻译题：我把钥匙插入箱子底部，然后从侧面转动里面的开关。
+                                    <div class="row">
+                                        <textarea id="translation"></textarea>
+                                    </div>
+                                </li>
+                            </ol>
+                        </form>
+                        <div class="row submit-btn">
+                            <button onclick="myPrompt()" class="fake-sub"><span>提交答案</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bottom">
+        <div class="row"></div>
+    </div>
+</body>
+
+</html>
